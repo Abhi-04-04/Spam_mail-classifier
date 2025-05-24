@@ -13,7 +13,7 @@ if not os.path.exists(MODEL_PATH):
 model = joblib.load(MODEL_PATH)
 
 # UI
-st.title("📩 Spam vs. Ham Email Classifier")
+st.title("Spam vs. Ham Email Classifier")
 st.write("Enter an email message to classify it.")
 
 email = st.text_area("✉️ Email Text", height=200)
@@ -26,7 +26,7 @@ if st.button("🔍 Predict"):
     feedback = st.radio("Is the prediction correct?", ["Yes", "No"], index=0)
     if feedback == "No":
         correct_label = st.selectbox("Select the correct label:", ["Ham", "Spam"])
-        if st.button("✅ Retrain with correction"):
+        if st.button(" Retrain with correction"):
             # Load past corrections if exist
             if os.path.exists("corrections.csv"):
                 corrections = pd.read_csv("corrections.csv")
